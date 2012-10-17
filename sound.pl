@@ -53,7 +53,7 @@ sub nick_msg {
 # Irssi::signal_add_last / Irssi::command_bind
 #--------------------------------------------------------------------
 
-Irssi::signal_add_last("message nick", "nick_msg");
+Irssi::signal_add("beep", "nick_msg");
 Irssi::signal_add_last("message public", "pub_msg");
 Irssi::signal_add_last("message private", "pri_msg");
 #- end
