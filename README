@@ -1,0 +1,7 @@
+Irssi sound by:
+Jeremiah Ticket:
+Storm Dragon: http://www.stormdragon.us/
+
+Adds sounds to irssi for different events, E.g. public message and private message received.
+
+Place sound.pl in .irssi/scripts/
