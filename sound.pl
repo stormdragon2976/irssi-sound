@@ -2,24 +2,23 @@ use strict;
 use vars qw($VERSION %IRSSI);
 
 use Irssi;
-$VERSION = '1.0';
+$VERSION = '0.0.3';
 %IRSSI = (
-        authors     => 'Storm Dragon',
+        authors     => 'Chrelad',
         contact     => 'blah@blah.blah',
         name        => 'alert',
         description => 'Play sounds for different events in IRSSI.',
-        url         => 'http://stormdragon.us',
+        url         => 'http://google.com',
         license     => 'GNU General Public License',
         changed     => '$Date: 2007-02-07 12:00:00 +0100 (Thu, 7 Feb 2008) $'
 );
 
 #--------------------------------------------------------------------
-# Original script created by Chrelad
+# Created by Chrelad
 # Feb 7, 2008
-#Heavily modified by Storm Dragon
-#Added private message sound.
+#modified by Storm Dragon
+#Added private message sound and the ability to select sound method
 #Sounds now play as a background process.
-#sounds are generated using sox.
 #--------------------------------------------------------------------
 
 #--------------------------------------------------------------------
@@ -37,7 +36,7 @@ sub pub_msg {
 
 sub pri_msg {
         my ($server,$msg,$nick,$address,$target) = @_;
-        system("play -qn synth pl G2 pl B2 pl D3 pl G3 pl D4 pl G4 delay 0 0.02 0.04 0.06 0.08 0.1 remix - phaser fade p 0 0.5 0.3 &");
+        system("play -qn -V0 synth pl G2 pl G3 pl B2 pl B3 pl D3 pl D4 pl G3 pl G4 pl D4 pl D4 pl G4 pl G4 delay 0 0 0.02 0.02 0.04 0.04 0.06 0.06 0.08 0.08 0.1 0.1 remix - phaser fade p 0 0.5 0.3 &");
 }
 
 #--------------------------------------------------------------------
@@ -53,8 +52,7 @@ sub nick_msg {
 # Irssi::signal_add_last / Irssi::command_bind
 #--------------------------------------------------------------------
 
-Irssi::signal_add("beep", "nick_msg");
-Irssi::signal_add_last("message public", "pub_msg");
+Irssi::signal_add("beep", "nick_msg");Irssi::signal_add_last("message public", "pub_msg");
 Irssi::signal_add_last("message private", "pri_msg");
 #- end
 
