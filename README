@@ -5,3 +5,11 @@ Storm Dragon: http://stormdragon.tk
 Adds sounds to irssi for different events, E.g. public message and private message received.
 
 Place sound.pl in .irssi/scripts/
+Then in irssi do:
+/script load sound
+If you want to autorun the script, place the script in or simlink to ~/.irssi/scripts/autorun/
+
+
+There is a basic install script, just run:
+./install
+This install script creates the folder ~/.irssi/scripts/autorun if it doesn't exist and simlinks the script to start automatically.
