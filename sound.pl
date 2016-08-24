@@ -25,6 +25,16 @@ $VERSION = '0.0.3';
 # The sound playing function for public message
 #--------------------------------------------------------------------
 
+sub join_msg {
+        my ($server,$msg,$nick,$address,$target) = @_;
+        system("]y -n synth tri 1500 tri 1800 delay 0 .12 fade h 0 .2 remix -")
+}
+
+sub part_msg {
+        my ($server,$msg,$nick,$address,$target) = @_;
+        system("]y -n synth tri 1800 tri 1500 delay 0 .12 fade h 0 .2 remix -")
+}
+
 sub pub_msg {
         my ($server,$msg,$nick,$address,$target) = @_;
         system("play -qn -V0 synth 0.09 tri E3:B3 &");
