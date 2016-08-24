@@ -27,12 +27,12 @@ $VERSION = '0.0.3';
 
 sub join_msg {
         my ($server,$msg,$nick,$address,$target) = @_;
-        system("]y -n synth tri 1500 tri 1800 delay 0 .12 fade h 0 .2 remix -")
+        system("play -n synth tri 1500 tri 1800 delay 0 .12 fade h 0 .2 remix &")
 }
 
 sub part_msg {
         my ($server,$msg,$nick,$address,$target) = @_;
-        system("]y -n synth tri 1800 tri 1500 delay 0 .12 fade h 0 .2 remix -")
+        system("play -n synth tri 1800 tri 1500 delay 0 .12 fade h 0 .2 remix &");
 }
 
 sub pub_msg {
@@ -65,5 +65,8 @@ sub nick_msg {
 Irssi::signal_add("beep", "nick_msg");Irssi::signal_add_last("message public", "pub_msg");
 Irssi::signal_add_last("message private", "pri_msg");
 Irssi::signal_add_last("message hilight", "nick_msg");
+Irssi::signal_add("event join", 'join_msg');
+#        Irssi::signal_add("event quit", 'on_quit');
+        Irssi::signal_add("event part", 'part_msg');
 #- end
 
