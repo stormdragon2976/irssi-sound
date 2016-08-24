@@ -42,7 +42,7 @@ sub pri_msg {
 #--------------------------------------------------------------------
 # The sound playing function for nick mensioning message
 #--------------------------------------------------------------------
-
+	
 sub nick_msg {
         my ($server,$msg,$nick,$address,$target) = @_;
         system("play -qn -V0 synth 0.5 tri A3:D3 tri D3:A3 remix - &");

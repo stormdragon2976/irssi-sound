@@ -1,0 +1,7 @@
+#!/bin/bash
+#Basic Install Script
+echo "This will install to~/.irssi/scripts and create a simlink to autostart the script."
+mkdir -p ~/.irssi/scripts/autorun/
+cp sound.pl ~/.irssi/scripts/
+ln -s ~/.irssi/scripts/sound.pl ~/.irssi/scripts/autorun/sound.pl
+echo "Done!"
