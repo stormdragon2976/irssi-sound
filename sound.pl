@@ -27,12 +27,12 @@ $VERSION = '0.0.3';
 
 sub join_msg {
         my ($server,$msg,$nick,$address,$target) = @_;
-        system("play -n synth tri 1500 tri 1800 delay 0 .12 fade h 0 .2 remix &")
+        system("play -qnV0 synth tri 1500 tri 1800 delay 0 .12 fade h 0 .2 remix - &. /sev/null&")
 }
 
 sub part_msg {
         my ($server,$msg,$nick,$address,$target) = @_;
-        system("play -n synth tri 1800 tri 1500 delay 0 .12 fade h 0 .2 remix &");
+        system("play -qnV0 synth tri 1800 tri 1500 delay 0 .12 fade h 0 .2 remix - &> /dev/null&");
 }
 
 sub pub_msg {
