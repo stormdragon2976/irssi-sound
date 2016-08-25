@@ -58,19 +58,27 @@ sub pri_msg {
 # The sound playing function for nick mensioning message
 #--------------------------------------------------------------------
 	
-sub nick_msg {
-        my ($server,$msg,$nick,$address,$target) = @_;
-        system("play -qn -V0 synth 0.5 tri A3:D3 tri D3:A3 remix - &");
-}
+sub hilight {
+        my ($dest, $text, $stripped) = @_;
+my $server = $dest->{server};
+my $window = Irssi::active_server();
+        if (!($server &&
+                  $dest->{level} & (MSGLEVEL_HILIGHT | MSGLEVEL_NOTICES) &&
+                  $server->ischannel($dest->{target}) &&
+$window->{refnum} != $dest->{window}->{refnum})) {
+                return;
+        }
+system("play -qn -V0 synth 0.5 tri A3:D3 tri D3:A3 remix - &. /dev/null &");
+        }
+ 
 
 #--------------------------------------------------------------------
 # Irssi::signal_add_last / Irssi::command_bind
 #--------------------------------------------------------------------
 
-#Irssi::signal_add("beep", "nick_msg");
 Irssi::signal_add_last("message public", "pub_msg");
 Irssi::signal_add_last("message private", "pri_msg");
-Irssi::signal_add_last("message hilight", "nick_msg");
+Irssi::signal_add_last('print text', "hilight");
 Irssi::signal_add("event join", 'join_msg');
         Irssi::signal_add("event quit", 'quit_msg');
         Irssi::signal_add("event part", 'part_msg');
