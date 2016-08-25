@@ -67,7 +67,8 @@ sub nick_msg {
 # Irssi::signal_add_last / Irssi::command_bind
 #--------------------------------------------------------------------
 
-Irssi::signal_add("beep", "nick_msg");Irssi::signal_add_last("message public", "pub_msg");
+#Irssi::signal_add("beep", "nick_msg");
+Irssi::signal_add_last("message public", "pub_msg");
 Irssi::signal_add_last("message private", "pri_msg");
 Irssi::signal_add_last("message hilight", "nick_msg");
 Irssi::signal_add("event join", 'join_msg');
