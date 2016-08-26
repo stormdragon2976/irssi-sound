@@ -63,7 +63,7 @@ sub hilight {
 my $server = $dest->{server};
 my $window = Irssi::active_server();
         if (!($server &&
-                  $dest->{level} & (MSGLEVEL_HILIGHT | MSGLEVEL_NOTICES) &&
+                  $dest->{level} & (MSGLEVEL_HILIGHT) &&
                   $server->ischannel($dest->{target}) &&
 $window->{refnum} != $dest->{window}->{refnum})) {
                 return;
