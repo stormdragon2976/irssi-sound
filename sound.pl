@@ -37,7 +37,7 @@ sub part_msg {
 
 sub quit_msg {
 my ($server,$msg,$nick,$address,$target) = @_;
-system("play -qnV0 synth tri 1000 tri 800 delay 0 .12 fade h 0 .2 remix - &. /dev/null&")
+system("play -qnV0 synth pi fade h 0 1 1 pad 0 1 reverb overdrive riaa norm -7 &> /dev/null&")
 }
 
 sub pub_msg {
