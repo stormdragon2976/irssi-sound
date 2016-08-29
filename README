@@ -3,7 +3,7 @@ Jeremiah Ticket
 Storm Dragon: http://stormdragon.tk
 
 Adds sounds to irssi for different events, E.g. public message and private message received.
-
+This script uses sox to generate it's sounds, so make sure sox is somewhere in your path.
 Place sound.pl in .irssi/scripts/
 Then in irssi do:
 /script load sound
