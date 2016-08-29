@@ -65,11 +65,11 @@ sub own_msg {
 }
 sub own_notice_msg {
         my ($server,$msg,$nick,$address,$target) = @_;
-        system("play -qnV0 synth 0.09 tri B3:E3 &> /dev/null&");
+        system("play -nqV0 synth pi fade h 0 1 1 norm -15 pad 0 1 reverb overdrive riaa speed 32 repeat 3 &> /dev/null&");
 }
 sub notice_msg {
         my ($server,$msg,$nick,$address,$target) = @_;
-        system("play -qnV0 synth 0.09 tri B3:E3 &> /dev/null&");
+        system("play -nqV0 synth pi fade h 0 1 1 norm -15 pad 0 1 reverb overdrive riaa speed 32 reverse repeat 3 &> /dev/null&");
 }
 
 #--------------------------------------------------------------------
