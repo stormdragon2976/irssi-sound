@@ -42,16 +42,16 @@ system("play -qnV0 synth pi fade h 0 1 1 pad 0 1 reverb overdrive riaa norm -7 &
 
 sub pub_msg {
         my ($server,$msg,$nick,$address,$target) = @_;
-        system("play -qn -V0 synth 0.09 tri E3:B3 &");
+        system("play -qnV0 synth 0.09 tri E3:B3 &> /dev/null&");
 }
 sub action_msg {
         my ($server,$msg,$nick,$address,$target) = @_;
-        system("play -qn -V0 synth 0.09 tri E3:B3 &");
+        system("play -qnV0 synth 0.25 tri G5:E1 tri B5:D1 remix - norm -5 &> /dev/null&");
 }
 
 sub own_msg {
         my ($server,$msg,$nick,$address,$target) = @_;
-        system("play -qn -V0 synth 0.09 tri E3:B3 &");
+        system("play -qnV0 synth 0.09 tri B3:E3 &> /dev/null&");
 }
 
 #--------------------------------------------------------------------
@@ -60,7 +60,7 @@ sub own_msg {
 
 sub pri_msg {
         my ($server,$msg,$nick,$address,$target) = @_;
-        system("play -qn -V0 synth pl G2 pl G3 pl B2 pl B3 pl D3 pl D4 pl G3 pl G4 pl D4 pl D4 pl G4 pl G4 delay 0 0 0.02 0.02 0.04 0.04 0.06 0.06 0.08 0.08 0.1 0.1 remix - phaser fade p 0 0.5 0.3 &");
+        system("play -qnV0 synth pl G2 pl G3 pl B2 pl B3 pl D3 pl D4 pl G3 pl G4 pl D4 pl D4 pl G4 pl G4 delay 0 0 0.02 0.02 0.04 0.04 0.06 0.06 0.08 0.08 0.1 0.1 remix - phaser fade p 0 0.5 0.3 &> /dev/null&");
 }
 
 #--------------------------------------------------------------------
@@ -77,7 +77,7 @@ my $window = Irssi::active_server();
 $window->{refnum} != $dest->{window}->{refnum})) {
                 return;
         }
-system("play -qn -V0 synth 0.5 tri A3:D3 tri D3:A3 remix - &. /dev/null &");
+system("play -qnV0 synth 0.5 tri A3:D3 tri D3:A3 remix - &> /dev/null&");
         }
  
 
