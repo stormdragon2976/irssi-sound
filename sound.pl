@@ -44,6 +44,15 @@ sub pub_msg {
         my ($server,$msg,$nick,$address,$target) = @_;
         system("play -qn -V0 synth 0.09 tri E3:B3 &");
 }
+sub action_msg {
+        my ($server,$msg,$nick,$address,$target) = @_;
+        system("play -qn -V0 synth 0.09 tri E3:B3 &");
+}
+
+sub own_msg {
+        my ($server,$msg,$nick,$address,$target) = @_;
+        system("play -qn -V0 synth 0.09 tri E3:B3 &");
+}
 
 #--------------------------------------------------------------------
 # The sound playing function for private message
