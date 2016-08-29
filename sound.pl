@@ -44,6 +44,15 @@ sub pub_msg {
         my ($server,$msg,$nick,$address,$target) = @_;
         system("play -qnV0 synth 0.09 tri E3:B3 &> /dev/null&");
 }
+sub own_action_msg {
+        my ($server,$msg,$nick,$address,$target) = @_;
+        system("play -qnV0 synth 0.09 tri E3:B3 &> /dev/null&");
+}
+
+sub own_private_msg {
+        my ($server,$msg,$nick,$address,$target) = @_;
+        system("play -qnV0 synth 0.09 tri E3:B3 &> /dev/null&");
+}
 
 sub action_msg {
         my ($server,$msg,$nick,$address,$target) = @_;
@@ -90,6 +99,8 @@ Irssi::signal_add_last("message public", "pub_msg");
 Irssi::signal_add_last("message irc action", "action_msg");
 Irssi::signal_add_last("message own_public", "own_msg");
 Irssi::signal_add_last("message private", "pri_msg");
+Irssi::signal_add_last("message own_private", "own_private_msg");
+Irssi::signal_add_last("message irc own_action", "own_action_msg");
 Irssi::signal_add_last('print text', "hilight");
 Irssi::signal_add("event join", 'join_msg');
         Irssi::signal_add("event quit", 'quit_msg');
