@@ -51,7 +51,7 @@ sub own_action_msg {
 
 sub own_private_msg {
         my ($server,$msg,$nick,$address,$target) = @_;
-        system("play -qnV0 synth pl G2 pl G3 pl B2 pl B3 pl D3 pl D4 pl G3 pl G4 pl D4 pl D4 pl G4 pl G4 delay 0 0 0.02 0.02 0.04 0.04 0.06 0.06 0.08 0.08 0.1 0.1 remix - phaser fade p 0 0.5 0.3 reverse &> /dev/null&");
+        system("play -qnV0 synth pl G2 pl G3 pl B2 pl B3 pl D3 pl D4 pl G3 pl G4 pl D4 pl D4 pl G4 pl G4 delay 0 0.01 0.02 0.03 0.04 0.05 0.06 0.07 0.08 0.09 0.1 0.11 remix - phaser fade p 0 0.5 0.3 norm -3 &> /dev/null&");
 }
 
 sub action_msg {
@@ -78,7 +78,7 @@ sub notice_msg {
 
 sub pri_msg {
         my ($server,$msg,$nick,$address,$target) = @_;
-        system("play -qnV0 synth pl G2 pl G3 pl B2 pl B3 pl D3 pl D4 pl G3 pl G4 pl D4 pl D4 pl G4 pl G4 delay 0 0 0.02 0.02 0.04 0.04 0.06 0.06 0.08 0.08 0.1 0.1 remix - phaser fade p 0 0.5 0.3 &> /dev/null&");
+system("play -qnV0 synth pl G4 pl G4 pl D4 pl D4 pl D4 pl D3 pl G4 pl G3 pl B3 pl B2 pl G3 pl G2 delay 0 0.01 0.02 0.03 0.04 0.05 0.06 0.07 0.08 0.09 0.1 0.11 remix - phaser fade p 0 0.5 0.3 norm -3 &> /dev/null&");
 }
 
 #--------------------------------------------------------------------
