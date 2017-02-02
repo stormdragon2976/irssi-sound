@@ -113,6 +113,6 @@ Irssi::signal_add_last("message irc own_notice", "own_notice_msg");
 Irssi::signal_add_last("message irc notice", "notice_msg");
 Irssi::signal_add_last('print text', "hilight");
 Irssi::signal_add("event join", 'join_msg');
-        Irssi::signal_add("event quit", 'quit_msg');
-        Irssi::signal_add("event part", 'part_msg');
+Irssi::signal_add("event quit", 'quit_msg');
+Irssi::signal_add("event part", 'part_msg');
 #- end
