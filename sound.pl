@@ -115,4 +115,5 @@ Irssi::signal_add_last('print text', "hilight");
 Irssi::signal_add("event join", 'join_msg');
 Irssi::signal_add("event quit", 'quit_msg');
 Irssi::signal_add("event part", 'part_msg');
+Irssi::signal_add("event kick", 'part_msg');
 #- end
