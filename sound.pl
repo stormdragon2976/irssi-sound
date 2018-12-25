@@ -153,7 +153,7 @@ system("play -qnV0 synth 0.5 tri A3:D3 tri D3:A3 remix - &> /dev/null&");
 #--------------------------------------------------------------------
 # Irssi::signal_add_last / Irssi::command_bind
 #--------------------------------------------------------------------
-Irssi::settings_add_bool("lookandfeel", "sounds", 1);
+Irssi::settings_add_bool("lookandfeel", "sounds", 0);
 Irssi::signal_add_last("message public", "pub_msg");
 Irssi::signal_add_last("message irc action", "action_msg");
 Irssi::signal_add_last("message own_public", "own_msg");
